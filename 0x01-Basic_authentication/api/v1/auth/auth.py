@@ -3,6 +3,7 @@
 
 from typing import List, TypeVar
 
+
 class Auth():
     """Handles authentication and authorization."""
 
@@ -11,7 +12,8 @@ class Auth():
 
         Args:
             path (str): The path to check for authentication requirement.
-            excluded_paths (List[str]): List of paths excluded from authentication.
+            excluded_paths (List[str]):
+            List of paths excluded from authentication.
 
         Returns:
             bool: True if authentication is required, False otherwise.
@@ -32,7 +34,8 @@ class Auth():
         """Extracts the authorization header from a given request.
 
         Args:
-            request (request object, optional): The request object containing headers.
+            request (request object, optional):
+            The request object containing headers.
 
         Returns:
             str: The authorization header value, or None if not found.
@@ -48,6 +51,7 @@ class Auth():
             request (request object, optional): The request object.
 
         Returns:
-            TypeVar('User'): The current user object or None if not authenticated.
+            TypeVar('User'):
+            The current user object or None if not authenticated.
         """
         return None
