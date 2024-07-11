@@ -2,6 +2,7 @@
 """Authentication module for handling user authorization."""
 
 from typing import List, TypeVar
+from os import getenv
 
 
 class Auth():
@@ -55,3 +56,22 @@ class Auth():
             The current user object or None if not authenticated.
         """
         return None
+
+    def session_cookie(self, request=None):
+        """Returns the session cookie value from a request.
+
+        Args:
+            request (request object, optional): The request object.
+
+        Returns:
+            str: The session cookie value or None if not found.
+        """
+        if request is None:
+            return None
+
+        SESSION_NAME = getenv("SESSION_NAME")
+        if SESSION_NAME is None:
+            return None
+
+        session_id = request.cookies.get(SESSION_NAME)
+        return session_id
