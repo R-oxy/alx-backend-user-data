@@ -20,12 +20,12 @@ def login():
     email = request.form.get("email")
 
     if email is None:
-        return jsonify({"error": "email is missing"}), 400
+        return jsonify({"error": "email missing"}), 400
 
     password = request.form.get("password")
 
     if password is None:
-        return jsonify({"error": "password is missing"}), 400
+        return jsonify({"error": "password missing"}), 400
 
     users = User.search({"email": email})
 
